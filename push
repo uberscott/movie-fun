@@ -1,0 +1,2 @@
+#!/bin/bash 
+cf push moviefun -p target/moviefun.war -b java_buildpack_offline --random-route
