@@ -8,9 +8,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.superbiz.moviefun.albums.TaskScheduleDAO;
 import org.superbiz.moviefun.blobstore.BlobStore;
 import org.superbiz.moviefun.blobstore.S3Store;
 import org.superbiz.moviefun.blobstore.ServiceCredentials;
+
+import javax.sql.DataSource;
 
 @SpringBootApplication
 public class Application {
@@ -47,4 +51,17 @@ public class Application {
 
         return new S3Store(s3Client, photoStorageBucket);
     }
+
+    /*
+    public JdbcTemplate jdbcTemplate(DataSource dataSource )
+    {
+        return new JdbcTemplate(dataSource);
+    }
+
+    @Bean
+    public TaskScheduleDAO taskScheduleDAO( JdbcTemplate template )
+    {
+
+    }
+    */
 }
